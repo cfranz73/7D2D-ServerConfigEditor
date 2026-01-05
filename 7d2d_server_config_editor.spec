@@ -35,4 +35,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+    icon=['C:\\Users\\Gramps\\Code\\7D2D-ServerConfigEditor\\Logos and Images\\icon.ico'],
 )

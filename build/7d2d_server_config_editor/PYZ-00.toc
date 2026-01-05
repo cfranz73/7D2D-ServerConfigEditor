@@ -1,5 +1,4 @@
-('C:\\Users\\Gramps\\DanceMonkeyDanceStudio\\7 Days to Die Server Config '
- 'Editor\\build\\7d2d_server_config_editor\\PYZ-00.pyz',
+('C:\\Users\\Gramps\\Code\\7D2D-ServerConfigEditor\\build\\7d2d_server_config_editor\\PYZ-00.pyz',
  [('PIL',
    'C:\\Users\\Gramps\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\PIL\\__init__.py',
    'PYMODULE'),

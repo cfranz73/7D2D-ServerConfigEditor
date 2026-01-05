@@ -35,6 +35,19 @@ from PIL import Image, ImageTk
 
 
 # ============================================================================
+# RESOURCE PATH HELPER (PyInstaller Support)
+# ============================================================================
+
+def resource_path(relative_path):
+    """Get absolute path to resource, works for dev and for PyInstaller."""
+    try:
+        base_path = sys._MEIPASS  # PyInstaller temp dir
+    except:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
+
+
+# ============================================================================
 # CORE CONFIGURATION
 # ============================================================================
 
@@ -412,14 +425,43 @@ def repair_xml_encoding(filepath: str) -> bool:
 class ServerConfigEditor:
     """Main application for 7 Days to Die server configuration editing."""
     
-    VERSION = "1.2.5"
+    VERSION = "1.2.6"
     
     def __init__(self, root):
         self.root = root
-        self.root.title("7 Days to Die Server Config Editor")
+        self.root.title("7 Days to Die Server Config Editor™")
         self.root.geometry("1200x750")
         self.root.minsize(900, 600)
         self.root.configure(bg="#f0f0f0")
+        
+        # Set window icon with multiple methods for best compatibility
+        try:
+            icon_path = resource_path('icon.ico')
+            
+            # Method 1: iconbitmap (for window border)
+            self.root.iconbitmap(default=icon_path)
+            
+            # Method 2: iconphoto (for taskbar on some systems)
+            try:
+                # Load icon and convert to PhotoImage
+                icon_img = Image.open(icon_path)
+                # Use the largest size from the ico (usually 256x256 or 128x128)
+                icon_photo = ImageTk.PhotoImage(icon_img)
+                # Store reference to prevent garbage collection
+                self.root.icon_photo = icon_photo
+                self.root.iconphoto(True, icon_photo)
+            except Exception as e:
+                print(f"Debug: iconphoto failed: {e}")
+                
+            # Method 3: Set window attributes for Windows
+            if platform.system() == 'Windows':
+                try:
+                    # Force update the window
+                    self.root.update_idletasks()
+                except:
+                    pass
+        except Exception as e:
+            print(f"Debug: Icon loading failed: {e}")
         
         # Center window on screen
         self._center_window()
@@ -479,11 +521,7 @@ class ServerConfigEditor:
     def _load_tooltip_icon(self):
         """Load and scale the tooltip icon image."""
         try:
-            tooltip_icon_path = os.path.join(
-                os.path.dirname(__file__),
-                "Logos and Images",
-                "tooltip-icon.png"
-            )
+            tooltip_icon_path = resource_path(os.path.join("Logos and Images", "tooltip-icon.png"))
             
             if os.path.exists(tooltip_icon_path):
                 # Load the image
@@ -604,7 +642,7 @@ class ServerConfigEditor:
         
         title_label = tk.Label(
             header,
-            text="7 Days to Die Server Config Editor",
+            text="7 Days to Die Server Config Editor™",
             font=("Segoe UI", 23, "bold"),
             bg="#007acc",
             fg="white"
@@ -920,7 +958,7 @@ class ServerConfigEditor:
         """Create footer bar."""
         footer = tk.Label(
             self.root,
-            text=f"Version {self.VERSION} © 7 Days to Die Server Config Editor by Dance Monkey Dance",
+            text=f"Version {self.VERSION} © 7 Days to Die Server Config Editor™ by Dance Monkey Dance™",
             bg="#dcdcdc",
             fg="#666666",
             font=("Segoe UI", 8),
@@ -1376,7 +1414,21 @@ class ServerConfigEditor:
         
         # Insert changelog content
         changelog = (
-            "v1.2.5 (Current)\n"
+            "v1.2.6 (Current)\n"
+            "- PATCH: PyInstaller executable build support\n"
+            "- Added resource_path() helper function for PyInstaller compatibility\n"
+            "- Fixed duplicate tk.Tk() instances causing PhotoImage errors\n"
+            "- Updated icon.ico and tooltip-icon.png loading to use resource_path()\n"
+            "- Fixed Windows taskbar icon display using SetCurrentProcessExplicitAppUserModelID\n"
+            "- Added multiple icon setting methods (iconbitmap, iconphoto) for best compatibility\n"
+            "- Taskbar icon fix now runs before tk.Tk() window creation\n"
+            "- Created build_exe.bat and build_exe.sh automated build scripts\n"
+            "- Created BUILD.md with comprehensive build documentation\n"
+            "- Created clear_icon_cache.bat utility for Windows icon cache issues\n"
+            "- Application now builds as standalone 22MB executable\n"
+            "- All resources properly bundled in PyInstaller build\n"
+            "- Window title updated with trademark symbol (™)\n\n"
+            "v1.2.5\n"
             "- MINOR: Added Settings dialog in File menu\n"
             "- New 'Server Config Location' setting for persistent path storage\n"
             "- Settings saved to user home directory (~/.7d2d_config_editor_settings.json)\n"
@@ -2156,6 +2208,15 @@ Files are located in:
 
 def main():
     """Main application entry point."""
+    # Fix Windows taskbar icon (must be called before tk.Tk())
+    if platform.system() == 'Windows':
+        try:
+            import ctypes
+            myappid = 'DanceMonkeyDance.7D2DServerConfigEditor.1.2.5'
+            ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+        except:
+            pass
+    
     root = tk.Tk()
     app = ServerConfigEditor(root)
     root.mainloop()
