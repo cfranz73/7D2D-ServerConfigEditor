@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ServerSettings>
+	
+
+	
+	<property name="ServerName" value="My Game Host" />		
+	<property name="ServerDescription" value="A 7 Days to Die server" />	
+	<property name="ServerWebsiteURL" value="" />					
+	<property name="ServerPassword" value="" />					
+	<property name="ServerLoginConfirmationText" value="" />					
+	<property name="Region" value="NorthAmericaEast" />	
+	<property name="Language" value="English" />			
+
+	
+	<property name="ServerPort" value="26900" />				
+	<property name="ServerVisibility" value="2" />					
+	<property name="ServerDisabledNetworkProtocols" value="SteamNetworking" />	
+	<property name="ServerMaxWorldTransferSpeedKiBs" value="512" />				
+
+	
+	<property name="ServerMaxPlayerCount" value="8" />					
+	<property name="ServerReservedSlots" value="0" />					
+	<property name="ServerReservedSlotsPermission" value="100" />				
+	<property name="ServerAdminSlots" value="2" />					
+	<property name="ServerAdminSlotsPermission" value="0" />					
+
+	
+	<property name="WebDashboardEnabled" value="false" />				
+	<property name="WebDashboardPort" value="8080" />				
+	<property name="WebDashboardUrl" value="" />					
+	<property name="EnableMapRendering" value="false" />				
+
+	<property name="TelnetEnabled" value="true" />				
+	<property name="TelnetPort" value="8081" />				
+	<property name="TelnetPassword" value="" />					
+	<property name="TelnetFailedLoginLimit" value="10" />				
+	<property name="TelnetFailedLoginsBlocktime" value="10" />				
+
+	<property name="TerminalWindowEnabled" value="true" />				
+
+	
+	<property name="AdminFileName" value="serveradmin.xml" />	
+		
+
+	
+	<property name="ServerAllowCrossplay" value="false" />				
+	<property name="EACEnabled" value="false" />				
+	<property name="IgnoreEOSSanctions" value="false" />				
+	<property name="HideCommandExecutionLog" value="0" />					
+	<property name="MaxUncoveredMapChunksPerPlayer" value="131072" />			
+	<property name="PersistentPlayerProfiles" value="false" />				
+	<property name="MaxChunkAge" value="-1" />				
+	<property name="SaveDataLimit" value="-1" />				
+
+	
+
+	
+	<property name="GameWorld" value="Navezgane" />			
+	<property name="WorldGenSeed" value="MyGame" />			
+	<property name="WorldGenSize" value="6144" />				 
+	<property name="GameName" value="MyGame" />			
+	<property name="GameMode" value="GameModeSurvival" />	
+
+	
+	<property name="GameDifficulty" value="0" />					
+	<property name="BlockDamagePlayer" value="100" />				
+	<property name="BlockDamageAI" value="50" />				
+	<property name="BlockDamageAIBM" value="75" />				
+	<property name="XPMultiplier" value="300" />				
+	<property name="PlayerSafeZoneLevel" value="20" />					
+	<property name="PlayerSafeZoneHours" value="5" />					
+
+	
+	<property name="BuildCreate" value="true" />				
+	<property name="DayNightLength" value="60" />				
+	<property name="DayLightLength" value="18" />				
+	<property name="BiomeProgression" value="true" />				
+	<property name="StormFreq" value="50" />				
+	<property name="DeathPenalty" value="1" />					
+	<property name="DropOnDeath" value="3" />					
+	<property name="DropOnQuit" value="0" />					
+	<property name="BedrollDeadZoneSize" value="15" />				
+	<property name="BedrollExpiryTime" value="45" />				
+	<property name="AllowSpawnNearFriend" value="1" />					
+	<property name="CameraRestrictionMode" value="0" />					
+	<property name="JarRefund" value="50" />					
+
+	
+	<property name="MaxSpawnedZombies" value="64" />				
+	<property name="MaxSpawnedAnimals" value="250" />				
+	<property name="ServerMaxAllowedViewDistance" value="12" />				
+	<property name="MaxQueuedMeshLayers" value="1000" />				
+
+	
+	<property name="EnemySpawnMode" value="true" />				
+	<property name="EnemyDifficulty" value="0" />					
+	<property name="ZombieFeralSense" value="0" />					
+	<property name="ZombieMove" value="0" />					
+	<property name="ZombieMoveNight" value="2" />					
+	<property name="ZombieFeralMove" value="2" />					
+	<property name="ZombieBMMove" value="2" />					
+	<property name="AISmellMode" value="2" />					
+	<property name="BloodMoonFrequency" value="7" />					
+	<property name="BloodMoonRange" value="0" />					
+	<property name="BloodMoonWarning" value="8" />					
+	<property name="BloodMoonEnemyCount" value="8" />					
+
+	
+	<property name="LootAbundance" value="200" />				
+	<property name="LootRespawnDays" value="7" />					
+	<property name="AirDropFrequency" value="72" />				
+	<property name="AirDropMarker" value="true" />				
+
+	
+	<property name="PartySharedKillRange" value="250" />				
+	<property name="PlayerKillingMode" value="2" />					
+
+	
+	<property name="LandClaimCount" value="5" />					
+	<property name="LandClaimSize" value="64" />				
+	<property name="LandClaimDeadZone" value="32" />				
+	<property name="LandClaimExpiryTime" value="7" />					
+	<property name="LandClaimDecayMode" value="2" />					
+	<property name="LandClaimOnlineDurabilityModifier" value="0" />				
+	<property name="LandClaimOfflineDurabilityModifier" value="0" />				
+	<property name="LandClaimOfflineDelay" value="0" />					
+
+	<property name="DynamicMeshEnabled" value="true" />				
+	<property name="DynamicMeshLandClaimOnly" value="true" />				
+	<property name="DynamicMeshLandClaimBuffer" value="3" />					
+	<property name="DynamicMeshMaxItemCache" value="3" />					
+
+	<property name="TwitchServerPermission" value="90" />				
+	<property name="TwitchBloodMoonAllowed" value="false" />				
+
+	<property name="QuestProgressionDailyLimit" value="999999999" />					
+
+	
+	
+	
+</ServerSettings>

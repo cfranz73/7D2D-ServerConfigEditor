@@ -1,0 +1,23 @@
+Subject: [Bug Report] test
+
+Bug Report from 7 Days to Die Server Config Editor
+
+Version: 1.2.3
+Timestamp: 2026-01-03T14:17:56.384562
+Platform: Windows-11-10.0.26100-SP0
+Python: 3.14.0
+
+--- USER DESCRIPTION ---
+test
+
+--- CURRENT STATUS ---
+Saved successfully at 14:16:50
+
+--- EDITOR STATE ---
+Configuration File: C:\Program Files (x86)\Steam\steamapps\common\7 Days to Die Dedicated Server\serverconfig.xml
+Total Properties: 97
+Unsaved Changes: No
+
+
+User Notes:
+test
