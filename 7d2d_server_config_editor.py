@@ -6,7 +6,7 @@ A comprehensive Tkinter GUI for editing serverconfig.xml with meticulous attenti
 
 Version: 1.1.1
 Author: Dance Monkey Dance Studios™
-License: NDT
+License: GNU AFFERO GENERAL PUBLIC LICENSE Version 3
 """
 
 import os
