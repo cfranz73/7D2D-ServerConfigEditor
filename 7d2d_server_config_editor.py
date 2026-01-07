@@ -4,7 +4,7 @@
 7 Days to Die Server Configuration Editor™
 A comprehensive Tkinter GUI for editing serverconfig.xml with meticulous attention to design details.
 
-Version: 1.1.1
+Version: 1.2.6
 Author: Dance Monkey Dance Studios™
 License: GNU AFFERO GENERAL PUBLIC LICENSE Version 3
 """
