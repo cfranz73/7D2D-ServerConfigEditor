@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # type: ignore
 """
-7 Days to Die Server Configuration Editor
+7 Days to Die Server Configuration Editor™
 A comprehensive Tkinter GUI for editing serverconfig.xml with meticulous attention to design details.
 
 Version: 1.1.1
-Author: Niggot Development Team
+Author: Dance Monkey Dance Studios™
 License: NDT
 """
 
